@@ -67,6 +67,7 @@ alias ok="git fetch --all && git rebase origin/master --autostash && git push -u
 alias ok-force="git fetch --all && git rebase origin/master --autostash && git push --force-with-lease && yarn test -u --no-coverage --changedSince origin/master"
 alias goproj="cd ~/Documents/Projets/TF1/mobile-news/"
 alias godot="cd ~/Documents/Perso/DotFiles/"
+alias gohome="cd ~"
 alias gom="git checkout master && git pull --autostash"
 alias fresh="git fetch --all && git rebase origin/master --autostash"
 alias bde="cd ios && bundle exec pod install && cd .."
