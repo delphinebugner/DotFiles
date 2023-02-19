@@ -223,5 +223,6 @@
 },
     "material-icon-theme.activeIconPack": "react",
     "todohighlight.isEnable": true,
-    "gitlens.views.commitDetails.files.layout": "tree"
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "editor.fontSize": 11
 }
