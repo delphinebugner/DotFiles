@@ -22,7 +22,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
-alias gcancel="git reset HEAD~1"
+alias gcancel="git reset HEAD~1 --soft"
 
 gfit() {
   git commit -m ":sparkles: $1"
@@ -50,6 +50,13 @@ gart() {
 }
 gwipp() {
   git commit -m ":construction: $1"
+}
+gasset() {
+  git commit -m ":bento: $1"
+}
+
+tu() {
+  yarn jest $1 -u --changedSince origin/master
 }
 
 ttu() {

@@ -1,0 +1,106 @@
+{
+	"console log text": {
+		"prefix": "ct",
+		"body": [
+			"console.log('$1');"
+		],
+		"description": "Log text output to console"
+	},
+	"console log variable": {
+		"prefix": "cl",
+		"body": [
+			"console.log({ $1 });"
+		],
+		"description": "Log variable to console"
+	},
+	"background color: red": {
+		"prefix": "bg",
+		"body": [
+			"backgroundColor: 'red',"
+		]
+	},
+	"spacer vertical": {
+		"prefix": "sw",
+		"body": [
+			"<Spacer width={$1} />"
+		]
+	},
+	"spacer horizontal": {
+		"prefix": "sh",
+		"body": [
+			"<Spacer height={$1} />"
+		]
+	},
+	"create stylesheet": {
+		"prefix": "sst",
+		"body": [
+			"const styles = StyleSheet.create({",
+			"  container: {",
+			"    $1 ",
+			"  },",
+			"});",
+			""
+		]
+	},
+	"FunctionComponent with one props": {
+		"prefix": "fc",
+		"body": [
+		  "import { theme } from '@src/common/theme/theme';",
+		  "import React, { FunctionComponent } from 'react';",
+		  "import { StyleSheet, View } from 'react-native';",
+		  "",
+		  "interface Props {",
+		  "  $2: string;",
+		  "}",
+		  "",
+		  "export const $1: FunctionComponent<Props> = ({ $2 }) => {",
+		  "  return <View style={styles.container}>{$2}</View>;",
+		  "};",
+		  "",
+		  "const styles = StyleSheet.create({",
+		  "  container: {",
+		  "    paddingHorizontal: theme.hPadding,",
+		  "  },",
+		  "});",
+		  ""
+		]
+	  },
+	  "FunctionComponent with no props": {
+		"prefix": "ffc",
+		"body": [
+		  "import { theme } from '@src/common/theme/theme';",
+		  "import React, { FunctionComponent } from 'react';",
+		  "import { StyleSheet, View } from 'react-native';",
+		  "",
+		  "export const Spacer: FunctionComponent = () => {",
+		  "  return <View style={styles.container}></View>;",
+		  "};",
+		  "",
+		  "const styles = StyleSheet.create({",
+		  "  container: {",
+		  "    paddingHorizontal: theme.hPadding,",
+		  "  },",
+		  "});",
+		  ""
+		]
+	  },
+	  "Test snapshot": {
+		"prefix": "snap",
+		"body": [
+		  "import { render } from '@src/jest/render';",
+		  "import { screen } from '@testing-library/react-native';",
+		  "import React from 'react';",
+		  "import { $1 } from '../components/$1.component';",
+		  "",
+		  "describe('$1', () => {",
+		  "  it('should render correctly', () => {",
+		  "    render({ Component: <$1 /> });",
+		  "",
+		  "    expect(screen).toMatchComponentSnapshot();",
+		  "  });",
+		  "});",
+		  ""
+		],
+		"description": ""
+	  }
+}

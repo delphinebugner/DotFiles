@@ -224,5 +224,11 @@
     "material-icon-theme.activeIconPack": "react",
     "todohighlight.isEnable": true,
     "gitlens.views.commitDetails.files.layout": "tree",
-    "editor.fontSize": 11
+    "editor.fontSize": 11,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
