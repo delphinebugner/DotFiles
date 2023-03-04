@@ -6,8 +6,15 @@
 		],
 		"description": "Log text output to console"
 	},
-	"console log variable": {
+	"console log": {
 		"prefix": "cl",
+		"body": [
+			"console.log($1);"
+		],
+		"description": "Log text output to console"
+	},
+	"console log variable": {
+		"prefix": "cv",
 		"body": [
 			"console.log({ $1 });"
 		],

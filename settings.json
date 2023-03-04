@@ -219,9 +219,16 @@
                 "source.elm": "#5f7e97",
                 "string.quoted.single.js": "#ffffff",
                 "meta.objectliteral.js": "#82AAFF"
-    },
+    }
 },
     "material-icon-theme.activeIconPack": "react",
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "alert",
+        "type": "text",
+        "foreground": "orange",
+        "opacity": 50,
+        "iconColour": "orange"
+    },
     "todohighlight.isEnable": true,
     "gitlens.views.commitDetails.files.layout": "tree",
     "editor.fontSize": 11,
