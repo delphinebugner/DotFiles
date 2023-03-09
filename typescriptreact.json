@@ -13,12 +13,12 @@
 		],
 		"description": "Log text output to console"
 	},
-	"console log variable": {
-		"prefix": "cv",
+	"console log object": {
+		"prefix": "co",
 		"body": [
 			"console.log({ $1 });"
 		],
-		"description": "Log variable to console"
+		"description": "Log json object to console"
 	},
 	"background color: red": {
 		"prefix": "bg",
