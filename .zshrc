@@ -54,6 +54,12 @@ gwipp() {
 gasset() {
   git commit -m ":bento: $1"
 }
+gapple() {
+  git commit -m ":apple: $1"
+}
+gandroid() {
+  git commit -m ":robot_face: $1"
+}
 
 tu() {
   yarn jest $1 -u --changedSince origin/master
