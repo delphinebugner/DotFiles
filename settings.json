@@ -247,5 +247,6 @@
         "[ ]",
         "[x]",
         "TO DO"
-    ]
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
