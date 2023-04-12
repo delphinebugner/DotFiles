@@ -85,6 +85,7 @@ alias gom="git checkout master && git pull --autostash"
 alias fresh="git fetch --all && git rebase origin/master --autostash"
 alias bde="cd ios && bundle exec pod install && cd .."
 
+export HOMEBREW_NO_AUTO_UPDATE=1
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/emulator
