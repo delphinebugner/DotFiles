@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Atom One Dark",
+    "emmet.showExpandedAbbreviation": "never",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
@@ -230,6 +230,13 @@
         "iconColour": "orange"
     },
     "todohighlight.isEnable": true,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "TO DO"
+    ],
     "gitlens.views.commitDetails.files.layout": "tree",
     "editor.fontSize": 11,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -238,15 +245,11 @@
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "cmake.configureOnOpen": true,
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]",
-        "TO DO"
-    ],
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Atom One Dark",
+    "githubPullRequests.pullBranch": "never",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "genieai.enableConversationHistory": true,
+    "deepl.apiKey": "balise"
 }

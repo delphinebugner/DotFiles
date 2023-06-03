@@ -66,7 +66,7 @@ tu() {
 }
 
 ttu() {
-  yarn jest $1 --watch -u --no-coverage
+  yarn jest $1 --watchAll -u --no-coverage
 }
 
 ZSH_DISABLE_COMPFIX=true
@@ -76,14 +76,19 @@ export CLICOLOR=1
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
 
-alias ok="git fetch --all && git rebase origin/master --autostash && git push -u origin HEAD && yarn jest -u --changedSince origin/master"
+alias ok="git fetch --all && git rebase origin/master --autostash && git push -u origin HEAD && yarn test -u --no-coverage --changedSince origin/master"
 alias ok-force="git fetch --all && git rebase origin/master --autostash && git push --force-with-lease && yarn test -u --no-coverage --changedSince origin/master"
 alias goproj="cd ~/Documents/Projets/TF1/mobile-news/"
 alias godot="cd ~/Documents/Perso/DotFiles/"
 alias gohome="cd ~"
 alias gom="git checkout master && git pull --autostash"
+alias gom-ssh="ssh-add --apple-use-keychain ~/.ssh/id_ed25519 && git checkout master && git pull --autostash"
 alias fresh="git fetch --all && git rebase origin/master --autostash"
 alias bde="cd ios && bundle exec pod install && cd .."
+alias ys="yarn start"
+alias adr="adb reverse tcp:8081 tcp:8081"
+alias reinstall-ios="xcrun simctl uninstall booted com.tf1.mobilenews.staging && xcrun simctl install booted  ~/Library/Developer/Xcode/DerivedData/mobileNews-fntlilzifnxoylepzygptbtsivqe/Build/Products/Debug-iphonesimulator/mobileNews.app"
+alias reinstall-android="adb uninstall com.tf1.mobilenews.staging && adb install -t ./android/app/build/outputs/apk/staging/debug/app-staging-debug.apk"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export ANDROID_HOME=$HOME/Library/Android/sdk

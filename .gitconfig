@@ -1,6 +1,8 @@
 [alias]
     ff = "!f() { git log --pretty=oneline | fzf -n 2.. | awk '{print $1\"^\"}' | xargs -o git rebase -i; }; f"
 [alias]
+    cancel = "reset HEAD~1 --soft"
+[alias]
     autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT^; }; f"
 [user]
 	name = Delphine Bugner
