@@ -10,6 +10,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# Add identity on terminal opening
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -62,10 +65,14 @@ gandroid() {
 }
 
 tu() {
-  yarn jest $1 -u --changedSince origin/master
+  yarn jest $1 -u --no-coverage
 }
 
 ttu() {
+  yarn jest $1 --watch -u --no-coverage
+}
+
+ttu-all() {
   yarn jest $1 --watchAll -u --no-coverage
 }
 
@@ -76,22 +83,24 @@ export CLICOLOR=1
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
 
-alias ok="git fetch --all && git rebase origin/master --autostash && git push -u origin HEAD && yarn test -u --no-coverage --changedSince origin/master"
-alias ok-force="git fetch --all && git rebase origin/master --autostash && git push --force-with-lease && yarn test -u --no-coverage --changedSince origin/master"
-alias goproj="cd ~/Documents/Projets/TF1/mobile-news/"
-alias godot="cd ~/Documents/Perso/DotFiles/"
-alias gohome="cd ~"
+alias ok="git fetch --all && git rebase origin/master --autostash && git push -u origin HEAD && yarn test -u --no-coverage"
+alias ok-force="git fetch --all && git rebase origin/master --autostash && git push --force-with-lease && yarn test -u --no-coverage"
 alias gom="git checkout master && git pull --autostash"
-alias gom-ssh="ssh-add --apple-use-keychain ~/.ssh/id_ed25519 && git checkout master && git pull --autostash"
+alias goproj="cd ~/Documents/Projets/TF1/mobile-news/"
 alias fresh="git fetch --all && git rebase origin/master --autostash"
 alias bde="cd ios && bundle exec pod install && cd .."
 alias ys="yarn start"
+alias gohome="cd ~"
+alias gom-ssh="ssh-add --apple-use-keychain ~/.ssh/id_ed25519 && git checkout master && git pull --autostash"
 alias adr="adb reverse tcp:8081 tcp:8081"
-alias reinstall-ios="xcrun simctl uninstall booted com.tf1.mobilenews.staging && xcrun simctl install booted  ~/Library/Developer/Xcode/DerivedData/mobileNews-fntlilzifnxoylepzygptbtsivqe/Build/Products/Debug-iphonesimulator/mobileNews.app"
-alias reinstall-android="adb uninstall com.tf1.mobilenews.staging && adb install -t ./android/app/build/outputs/apk/staging/debug/app-staging-debug.apk"
+alias install-ios="xcrun simctl install booted  ~/Library/Developer/Xcode/DerivedData/mobileNews-fntlilzifnxoylepzygptbtsivqe/Build/Products/Debug-iphonesimulator/mobileNews.app"
+alias uninstall-ios="xcrun simctl uninstall booted com.tf1.mobilenews.staging"
+alias uninstall-android="adb uninstall com.tf1.mobilenews.staging"
+alias install-android="adb install -t ./android/app/build/outputs/apk/staging/debug/app-staging-debug.apk"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
