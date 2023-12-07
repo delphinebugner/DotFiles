@@ -28,40 +28,34 @@ plugins=(git)
 alias gcancel="git reset HEAD~1 --soft"
 
 gfit() {
-  git commit -m ":sparkles: $1"
+  git commit -m "feat $1"
 }
 gfact() {
-  git commit -m ":recycle: $1"
+  git commit -m "refacto $1"
 }
 gtest() {
-  git commit -m ":white_check_mark: $1"
+  git commit -m "test $1"
 }
 gfix() {
-  git commit -m ":bug: $1"
+  git commit -m "fix $1"
 }
 gconfig() {
-  git commit -m ":wrench: $1"
+  git commit -m "chore $1"
 }
 gdoc() {
-  git commit -m ":memo: $1"
+  git commit -m "doc $1"
 }
 gfire() {
-  git commit -m ":fire: $1"
+  git commit -m "fire $1"
 }
 gart() {
-  git commit -m ":art: $1"
+  git commit -m "style $1"
 }
 gwipp() {
-  git commit -m ":construction: $1"
+  git commit -m "wip $1"
 }
 gasset() {
-  git commit -m ":bento: $1"
-}
-gapple() {
-  git commit -m ":apple: $1"
-}
-gandroid() {
-  git commit -m ":robot_face: $1"
+  git commit -m "asset $1"
 }
 
 tu() {
@@ -86,17 +80,27 @@ export TERM=xterm-256color
 alias ok="git fetch --all && git rebase origin/master --autostash && git push -u origin HEAD && yarn test -u --no-coverage"
 alias ok-force="git fetch --all && git rebase origin/master --autostash && git push --force-with-lease && yarn test -u --no-coverage"
 alias gom="git checkout master && git pull --autostash"
+alias gomain="git checkout main && git pull --autostash"
 alias goproj="cd ~/Documents/Projets/TF1/mobile-news/"
 alias fresh="git fetch --all && git rebase origin/master --autostash"
+alias freshmain="git fetch --all && git rebase origin/main --autostash"
 alias bde="cd ios && bundle exec pod install && cd .."
+alias bd="bundle exec pod install"
 alias ys="yarn start"
+alias yt="yarn test"
 alias gohome="cd ~"
-alias gom-ssh="ssh-add --apple-use-keychain ~/.ssh/id_ed25519 && git checkout master && git pull --autostash"
 alias adr="adb reverse tcp:8081 tcp:8081"
 alias install-ios="xcrun simctl install booted  ~/Library/Developer/Xcode/DerivedData/mobileNews-fntlilzifnxoylepzygptbtsivqe/Build/Products/Debug-iphonesimulator/mobileNews.app"
 alias uninstall-ios="xcrun simctl uninstall booted com.tf1.mobilenews.staging"
 alias uninstall-android="adb uninstall com.tf1.mobilenews.staging"
 alias install-android="adb install -t ./android/app/build/outputs/apk/staging/debug/app-staging-debug.apk"
+alias gcm="git commit --amend"
+#Maestro
+export PATH=$PATH:$HOME/.maestro/bin
+
+# flashlight
+export PATH="/Users/delphinebugner/.flashlight/bin:$PATH"
+export FLASHLIGHT_API_KEY="fl_40b8abf838d34cdee3555ffc252c4ec5"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -107,4 +111,3 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:/usr/local/bin/adbme
-

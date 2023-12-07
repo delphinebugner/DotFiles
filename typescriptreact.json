@@ -50,18 +50,18 @@
 		]
 	},
 	"FunctionComponent with one props": {
-		"prefix": "fc",
+		"prefix": "fc1",
 		"body": [
 		  "import { theme } from '@src/common/theme/theme';",
-		  "import React, { FunctionComponent } from 'react';",
+		  "import { FunctionComponent } from 'react';",
 		  "import { StyleSheet, View } from 'react-native';",
 		  "",
 		  "interface Props {",
-		  "  $2: string;",
+		  "  $1: string;",
 		  "}",
 		  "",
-		  "export const $1: FunctionComponent<Props> = ({ $2 }) => {",
-		  "  return <View style={styles.container}>{$2}</View>;",
+		  "export const $TM_FILENAME_BASE: FunctionComponent<Props> = ({ $1 }) => {",
+		  "  return <View style={styles.container}>{$1}</View>;",
 		  "};",
 		  "",
 		  "const styles = StyleSheet.create({",
@@ -73,13 +73,13 @@
 		]
 	  },
 	  "FunctionComponent with no props": {
-		"prefix": "ffc",
+		"prefix": "fc0",
 		"body": [
 		  "import { theme } from '@src/common/theme/theme';",
-		  "import React, { FunctionComponent } from 'react';",
+		  "import { FunctionComponent } from 'react';",
 		  "import { StyleSheet, View } from 'react-native';",
 		  "",
-		  "export const Spacer: FunctionComponent = () => {",
+		  "export const $TM_FILENAME_BASE: FunctionComponent = () => {",
 		  "  return <View style={styles.container}></View>;",
 		  "};",
 		  "",
