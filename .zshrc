@@ -28,42 +28,42 @@ plugins=(git)
 alias gcancel="git reset HEAD~1 --soft"
 
 gfit() {
-  git commit -m "feat $1"
+  git commit -m "feat: $1"
 }
 gfact() {
-  git commit -m "refacto $1"
+  git commit -m "refacto: $1"
 }
 gtest() {
-  git commit -m "test $1"
+  git commit -m "test: $1"
 }
 gfix() {
-  git commit -m "fix $1"
+  git commit -m "fix: $1"
 }
-gconfig() {
-  git commit -m "chore $1"
+gchor() {
+  git commit -m "chore: $1"
 }
 gdoc() {
-  git commit -m "doc $1"
+  git commit -m "doc: $1"
 }
 gfire() {
-  git commit -m "fire $1"
+  git commit -m "fire: $1"
 }
 gart() {
-  git commit -m "style $1"
+  git commit -m "style: $1"
 }
 gwipp() {
-  git commit -m "wip $1"
+  git commit -m "wip: $1"
 }
 gasset() {
-  git commit -m "asset $1"
+  git commit -m "asset: $1"
 }
 
 tu() {
-  yarn jest $1 -u --no-coverage
+  yarn test:unit $1 -u --no-coverage
 }
 
 ttu() {
-  yarn jest $1 --watch -u --no-coverage
+  yarn test:unit $1 --watch -u --no-coverage
 }
 
 ttu-all() {
